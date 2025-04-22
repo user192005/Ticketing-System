@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticket Booking system</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="" class="logo">Ketan's Ticketing system</a>
+        <ul>
+          <li><a href="/"></a>Home</li>
+          <li><a href="shows.html">Shows</a> </li>
+          <li><a href="/"></a> Cart</li>
+          <li><a href="/"></a> Help</li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <h1>Book Your Tickets</h1>
+
+      <!-- Ticket Items -->
+      <div class="ticket-container">
+        <div
+          class="ticket-item"
+          onclick="showDetails('Movie', 'This is a popular action movie featuring top actors.', '$15', 'movie.jpg')"
+        >
+          <img src="images/Cinema.jpg" alt="Movie" />
+          <div class="ticket-info">
+            <h3>Action Movie</h3>
+            <p>Action-packed thriller</p>
+            <div class="price">$15</div>
+          </div>
+        </div>
+
+        <div
+          class="ticket-item"
+          onclick="showDetails('Concert', 'An unforgettable live music experience.', '$50', 'concert.jpg')"
+        >
+          <img
+            src="images/concert.png"
+            alt="Concert"
+          />
+          <div class="ticket-info">
+            <h3>Live Concert</h3>
+            <p>Pop music concert with top artists</p>
+            <div class="price">$50</div>
+          </div>
+        </div>
+
+        <div
+          class="ticket-item"
+          onclick="showDetails('Festival', 'The best cultural festival in the city!', '$30', 'festival.jpg')"
+        >
+          <img
+            src="images/cultural.png"
+            alt="Festival"
+          />
+          <div class="ticket-info">
+            <h3>Cultural Festival</h3>
+            <p>A blend of music, food, and culture</p>
+            <div class="price">$30</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="ticketModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="ticketTitle"></h2>
+          <span class="close" onclick="closeModal()">&times;</span>
+        </div>
+        <div class="modal-body">
+          <p id="ticketDescription"></p>
+          <div id="ticketPrice" class="price"></div>
+        </div>
+        <div class="modal-footer">
+          <button onclick="add_to_cart()">Add to cart</button>
+          <button onclick="bookTicket()">Book Now</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
